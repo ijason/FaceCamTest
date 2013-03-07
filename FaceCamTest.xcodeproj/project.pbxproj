@@ -18,6 +18,9 @@
 		96AF0D0716E6F6D900A91630 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96AF0D0616E6F6D900A91630 /* Default-568h@2x.png */; };
 		96AF0D0A16E6F6D900A91630 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96AF0D0816E6F6D900A91630 /* MainStoryboard.storyboard */; };
 		96AF0D0D16E6F6D900A91630 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AF0D0C16E6F6D900A91630 /* ViewController.m */; };
+		96AF0D1516E6F71D00A91630 /* FaceCamViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AF0D1416E6F71D00A91630 /* FaceCamViewer.m */; };
+		96AF0D1716E6F7CE00A91630 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AF0D1616E6F7CE00A91630 /* AVFoundation.framework */; };
+		96AF0D1916E6F86D00A91630 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AF0D1816E6F86D00A91630 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		96AF0D0916E6F6D900A91630 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		96AF0D0B16E6F6D900A91630 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		96AF0D0C16E6F6D900A91630 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		96AF0D1316E6F71D00A91630 /* FaceCamViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceCamViewer.h; sourceTree = "<group>"; };
+		96AF0D1416E6F71D00A91630 /* FaceCamViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceCamViewer.m; sourceTree = "<group>"; };
+		96AF0D1616E6F7CE00A91630 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		96AF0D1816E6F86D00A91630 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96AF0D1916E6F86D00A91630 /* QuartzCore.framework in Frameworks */,
+				96AF0D1716E6F7CE00A91630 /* AVFoundation.framework in Frameworks */,
 				96AF0CF116E6F6D900A91630 /* UIKit.framework in Frameworks */,
 				96AF0CF316E6F6D900A91630 /* Foundation.framework in Frameworks */,
 				96AF0CF516E6F6D900A91630 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +82,8 @@
 		96AF0CEF16E6F6D900A91630 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96AF0D1816E6F86D00A91630 /* QuartzCore.framework */,
+				96AF0D1616E6F7CE00A91630 /* AVFoundation.framework */,
 				96AF0CF016E6F6D900A91630 /* UIKit.framework */,
 				96AF0CF216E6F6D900A91630 /* Foundation.framework */,
 				96AF0CF416E6F6D900A91630 /* CoreGraphics.framework */,
@@ -89,6 +100,8 @@
 				96AF0D0B16E6F6D900A91630 /* ViewController.h */,
 				96AF0D0C16E6F6D900A91630 /* ViewController.m */,
 				96AF0CF716E6F6D900A91630 /* Supporting Files */,
+				96AF0D1316E6F71D00A91630 /* FaceCamViewer.h */,
+				96AF0D1416E6F71D00A91630 /* FaceCamViewer.m */,
 			);
 			path = FaceCamTest;
 			sourceTree = "<group>";
@@ -176,6 +189,7 @@
 				96AF0CFD16E6F6D900A91630 /* main.m in Sources */,
 				96AF0D0116E6F6D900A91630 /* AppDelegate.m in Sources */,
 				96AF0D0D16E6F6D900A91630 /* ViewController.m in Sources */,
+				96AF0D1516E6F71D00A91630 /* FaceCamViewer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,10 +274,14 @@
 		96AF0D1116E6F6D900A91630 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: JASON EVERETT (58P7C4FDD4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JASON EVERETT (58P7C4FDD4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FaceCamTest/FaceCamTest-Prefix.pch";
 				INFOPLIST_FILE = "FaceCamTest/FaceCamTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3DFEC1DE-76B8-48B1-8BF6-E267E41FBF19";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3DFEC1DE-76B8-48B1-8BF6-E267E41FBF19";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -271,10 +289,14 @@
 		96AF0D1216E6F6D900A91630 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: JASON EVERETT (58P7C4FDD4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JASON EVERETT (58P7C4FDD4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FaceCamTest/FaceCamTest-Prefix.pch";
 				INFOPLIST_FILE = "FaceCamTest/FaceCamTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3DFEC1DE-76B8-48B1-8BF6-E267E41FBF19";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3DFEC1DE-76B8-48B1-8BF6-E267E41FBF19";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -298,6 +320,7 @@
 				96AF0D1216E6F6D900A91630 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
