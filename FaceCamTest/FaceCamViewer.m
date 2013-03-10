@@ -30,7 +30,7 @@
 
 @implementation FaceCamViewer
 
-@synthesize cameraType, session;
+@synthesize cameraType, session, draggable;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -71,8 +71,8 @@
     [self setBackgroundColor:[UIColor blackColor]];
     self.layer.cornerRadius = 5;
     self.layer.masksToBounds = YES;
-    
     self.cameraType = AVCaptureDevicePositionFront;
+    self.draggable = NO;
 }
 
 -(void)startFaceCam {
@@ -82,7 +82,6 @@
         if (!session) {
             session = [[AVCaptureSession alloc] init];
         }
-        //AVCaptureSession *session = [[AVCaptureSession alloc] init];
         session.sessionPreset = AVCaptureSessionPresetMedium;
         
         NSError *error = nil;
@@ -130,6 +129,21 @@
     }
     
     return captureDevice;
+}
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *aTouch = [touches anyObject];
+    offset = [aTouch locationInView: self];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (self.draggable) {
+        UITouch *touch = [touches anyObject];
+        CGPoint location = [touch locationInView:self.superview];
+        [UIView beginAnimations:@"Dragging" context:nil];
+        self.frame = CGRectMake(location.x-offset.x, location.y-offset.y, self.frame.size.width, self.frame.size.height);
+        [UIView commitAnimations];
+    }
 }
 
 @end

@@ -33,6 +33,8 @@ viewer3.cameraType = AVCaptureDevicePositionBack;
 AVCaptureSession *session = [[AVCaptureSession alloc] init];
 viewer3.session = session; 
 
+viewer3.draggable = YES;
+
 [viewer3 startFaceCam];
 [self.view addSubview:viewer3];
 ```
@@ -51,6 +53,8 @@ cameraType (*Optional*)
 
 
 session (*Optional*) - sets AVCaptureSession
+
+draggable (*Optional*) - allows view to be draggable
 
 ## Contact
 

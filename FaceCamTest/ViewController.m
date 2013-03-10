@@ -29,11 +29,12 @@
     AVCaptureSession *session = [[AVCaptureSession alloc] init];
     
     FaceCamViewer *viewer3 = [[FaceCamViewer alloc] initWithFrame:CGRectMake(190, 290, 120, 160)];
-    viewer3.cameraType = AVCaptureDevicePositionBack; //Optional.  Set to AVCaptureDevicePositionFront by default.
-    viewer3.session = session; //Optional
+    //viewer3.cameraType = AVCaptureDevicePositionBack; //Optional.  Set to AVCaptureDevicePositionFront by default.
+    //viewer3.session = session; //Optional
+    viewer3.draggable = YES;
     [viewer3 startFaceCam];
     [self.view addSubview:viewer3];
-     */
+    */ 
 }
 
 - (void)didReceiveMemoryWarning
