@@ -35,10 +35,13 @@ typedef enum{
     IPAD = 2
 } DeviceType;
 
-@interface FaceCamViewer : UIView
+@interface FaceCamViewer : UIView {
+    CGPoint offset;
+}
 
 @property (nonatomic, assign) AVCaptureDevicePosition cameraType;
 @property (nonatomic, strong) AVCaptureSession *session;
+@property (nonatomic, assign) BOOL draggable;
 
 -(id)initWithDeviceType:(DeviceType)type;
 -(void)startFaceCam;
